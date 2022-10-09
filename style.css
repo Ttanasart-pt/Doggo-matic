@@ -1,0 +1,101 @@
+body {
+    font-family: helvetica, arial, sans-serif;
+    margin: 0;
+    background-color: #F2AB6D;
+    background-image: url("bg.png");
+    animation: bg-pan_h 6s linear infinite;
+    overflow: hidden;
+}
+
+@keyframes bg-pan_h {
+    from { background-position: 0px 0px; }
+    to { background-position: 96px 0px; }
+}
+
+h1 {
+    font-family: brevia, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 64px;
+    color: #403124;
+
+    margin-top: 64px;
+    margin-bottom: 16px;
+}
+
+p {
+    font-family: brevia, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #403124;
+    font-size: 150%;
+}
+
+
+video {
+    clear: both;
+    display: none;
+    margin: 10px;
+    background: #000000;
+    width: 640px;
+    height: 480px;
+
+    border-radius: 32px;
+}
+
+button {
+    padding: 10px;
+    float: left;
+    margin: 5px 3px 5px 10px;
+}
+
+.removed {
+    display: none;
+}
+
+div.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+div.in-content {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+}
+
+.shadow-right {
+    box-shadow: 16px 16px #00000060;
+}
+
+.shadow-left {
+    box-shadow: -16px 16px #00000060;
+}
+
+.rotate {
+    animation: rotate 4s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    0%   { transform: rotate(0deg)  scale(1.05); }
+    25%  { transform: rotate(5deg)  scale(0.95); }
+    50%  { transform: rotate(0deg)  scale(1.05); }
+    75%  { transform: rotate(-5deg) scale(0.95); }
+    100% { transform: rotate(0deg)  scale(1.05); }
+}
+
+.canvas {
+    width: 640px; 
+    height: 480px;
+    background-color: #000000;
+
+    border-radius: 32px;
+}
+
+img.result {
+    object-fit: cover;
+}

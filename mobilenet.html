@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script>
+    function onOpenCvReady() {
+        console.log("OpenCV loaded");
+    }
+</script>
+
+<head>
+    <title>Doggo-matic</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/fxn5vaq.css">
+
+    <script type="text/javascript" src="/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="frame">
+        <svg xmlns="http://www.w3.org/2000/svg" width="222.352" height="1080" viewBox="0 0 222.352 1080" style="position: absolute; 
+                top: 0;
+                left: 0;
+                z-index: 1;
+                opacity: 0.75;">
+            <path id="Path_1" data-name="Path 1"
+                d="M4444.292,8467.5c0-60,34.56-60,34.56-120.008s-34.56-60-34.56-120.008,34.56-60,34.56-120-34.56-60-34.56-120,34.56-60,34.56-119.993-34.56-60-34.56-120,34.56-60,34.56-120-34.56-60-34.56-120,34.56-60,34.56-120H4256.5v1080Z"
+                transform="translate(-4256.5 -7387.5)" fill="#403124" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="222.352" height="1080" viewBox="0 0 222.352 1080" style="position: absolute; 
+                top: 0;
+                right: 0;
+                z-index: 1;
+                opacity: 0.75;">
+            <path id="Path_2" data-name="Path 2"
+                d="M4291.061,8467.5c0-60-34.56-60-34.56-120.008s34.56-60,34.56-120.008-34.56-60-34.56-120,34.56-60,34.56-120-34.56-60-34.56-119.993,34.56-60,34.56-120-34.56-60-34.56-120,34.56-60,34.56-120-34.56-60-34.56-120h222.352v1080Z"
+                transform="translate(-4256.5 -7387.5)" fill="#403124" />
+        </svg>
+    </div>
+
+    <div class="content">
+        <div class="in-content">
+            <h1>Doggo-matic</h1>
+            <div style="height: 32px;"></div>
+
+            <div style="position: relative; height: 70vh;">
+                <div class="rotate" style="width: 640px; position: absolute; top: 0; left: 0;">
+                    <p>What dog are you?</p>
+                    <div style="width: 640px; height: 480px">
+                        <canvas id="overlay" class="canvas shadow-right"></canvas>
+                    </div>
+                </div>
+                <div style="width: 256px; position: absolute; bottom: 0; right: 0;">
+                    <p id="result_p">Results</p>
+                    <img id="result_i" class="shadow-left result" style="width: 256px; height: 256px; border-radius: 32px;"
+                        src="./dogs/0.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <video id="webcam" autoplay muted></video>
+</body>
+
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.5/dat.gui.min.js"></script>
+<script>
+    var Module = {
+        wasmBinaryFile: 'https://huningxin.github.io/opencv.js/build/wasm/opencv_js.wasm',
+        preRun: [function () {
+            Module.FS_createPreloadedFile('/', 'haarcascade_frontalface_alt.xml',
+                'https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_frontalface_alt.xml',
+                true, false);
+        }]
+    };
+</script>
+<script async src="https://huningxin.github.io/opencv.js/build/wasm/opencv.js"></script>
+
+</html>
